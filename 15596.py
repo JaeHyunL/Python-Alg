@@ -1,6 +1,6 @@
-def a(num_list):
+def a(k):
     b = 0
-    for i in num_list:
+    for i in k:
         b += i
     return b
 
