@@ -9,7 +9,7 @@ d = []
 for j in range(26):
     if c[j] == max(c):
         if d:
-
+            d.append(j)
             print("?")
             break
         else:
