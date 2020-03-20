@@ -7,7 +7,7 @@ if a >= b:
     a1 = a
     a = b
     b = a1
-for i in range(a, b):
+for i in range(a, b+1):
     count = 0
     for j in range(1, i+1):
 
