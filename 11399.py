@@ -1,7 +1,7 @@
 a = int(input())
 c = []
 b = list(map(int, input().split()))
-for i in range(5):
+for i in range(a):
     c.append(b[i])
 
 c = sorted(c)

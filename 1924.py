@@ -8,7 +8,6 @@ for a in range(0, i):
     elif a == 2:
         day += 28
 day += b
-print(day)
 if day % 7 == 1:
     print('MON')
 if day % 7 == 2:
