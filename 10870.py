@@ -1,6 +1,3 @@
-n = int(input())
-
-
 def fibonacci(n):
     if n == 0:
         return 1
@@ -8,6 +5,7 @@ def fibonacci(n):
         return 1
     return fibonacci(n-1)+fibonacci(n-2)
 
+n = int(input())
 
 if n == 0:
     print(0)
