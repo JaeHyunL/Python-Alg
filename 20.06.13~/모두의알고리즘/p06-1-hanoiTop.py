@@ -19,3 +19,4 @@ def hanoi(n, from_pos, to_pos, aux_pos):
 
 
 hanoi(4, 1, 3, 2)
+    
