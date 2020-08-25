@@ -7,7 +7,7 @@ for i in range(n):
 
 for i in nlist:
     r = 1
-
+    
     for j in nlist:
         if i[0]<j[0] and i[1]<j[1]:
             r += 1
