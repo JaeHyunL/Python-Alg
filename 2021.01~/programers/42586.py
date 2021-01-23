@@ -24,21 +24,17 @@ def solution(progresses, speeds):
         remaining = 100 - progresses[i] 
         stack.append(math.ceil(remaining / speeds[i]))
     print(stack)
-
+    
     i = 0
     result = 1 
     while True :
         i += 1
-
         first_value = stack[0]
-        if first_value > stack[i] : 
-            print('구분선2 ------- ',answer,result,i,stack)
-
+        if first_value >= stack[i] : 
             stack.remove(stack[i])
             result += 1
             i=0
-        elif first_value <= stack[i] :
-            print('구분선 ------- ',answer,result,i,stack)
+        elif first_value < stack[i] :
             i = 0
             stack.remove(stack[i])
             answer.append(result)
@@ -51,8 +47,8 @@ def solution(progresses, speeds):
     return answer
 
 if __name__ == "__main__":
-    #progresses=[95, 90, 99, 99, 80, 99]
-    #speeds=[1, 1, 1, 1, 1, 1]
-    progresses = [93, 30, 55]
-    speeds=[1,30,5]
+    progresses=[95, 90, 99, 99, 80, 99]
+    speeds=[1, 1, 1, 1, 1, 1]
+    #progresses = [99,1]
+    #speeds=[1,99]
     print(solution(progresses,speeds))
