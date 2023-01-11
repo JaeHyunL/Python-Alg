@@ -22,37 +22,34 @@ from collections import deque
 p = int(sys.stdin.readline())
 
 
-def command_alg(alpha, array_list, r_counter):
-    if alpha == "R":
-        if r_counter % 2 == 0:
-            return array_list
-        print("리버싱")
-        array_list.reverse()
-        return array_list
-    if alpha == "D":
-        array_list.popleft()
-        return array_list
-
-
 for i in range(p):
-    commands = list(sys.stdin.readline().rstrip())
+    commands = list(sys.stdin.readline().strip())
+
     size = int(sys.stdin.readline())
     list_input = deque(eval(sys.stdin.readline()))
-    r_counter = commands.count("R")
-    # aa = list_input.count("R")
-    # if aa % 2 == 0 and aa > 0:
-    #     list_input.rotate()
-    #     for ij in range(aa):
-    #         list_input.popleft()
-    #     list_input = deque(list_input)
-                # list(list_input).remove("R")
-            # except Exception:
-            #     list_input = deque(list_input)
-            #     breaka
-    try:
-        for command in commands:
-            list_input = command_alg(command, list_input, r_counter)
-        print(list(list_input))
-    except Exception:
-        print("error")
-        continue
+    now_comands = ''
+    res = ''
+    r_counter = 0
+    print_couter = 0
+    for ii in commands:
+        if ii == "R":
+            r_counter += 1
+            now_comands += 'R'
+        elif ii == "D":
+            r_counter = now_comands.count('R')
+            if len(list_input):
+                if r_counter == 0 or r_counter % 2 ==0:
+                    res += str(list_input.popleft())
+                elif r_counter % 2 == 1:
+                    res += str(list_input.pop())
+            else:
+                print_couter += 1
+                print('error')
+    if r_counter % 2 == 1:
+        list_input.reverse()
+    # if len(list_input):
+    if print_couter == 0:
+        print('[' + ",".join(map(str, list_input)) + ']')
+
+    # if last_print >0:
+    #     print([])
